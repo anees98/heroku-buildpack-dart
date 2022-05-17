@@ -36,13 +36,14 @@ build_pubspec() {
   cd $BUILD_DIR/$pub_dir
 
   #DART_PATH=/app/dart-sdk/bin
+  # PUB_CACHE_BIN=/app/pub-cache/bin
   DART_PATH=/src/flutter/bin/cache/dart-sdk/bin
-  PUB_CACHE_BIN=/app/pub-cache/bin
+  PUB_CACHE_BIN=/src/flutter/.pub-cache
 
   export PATH=$PATH:$DART_PATH:$PUB_CACHE_BIN
   message "*** Running pub get"
 
-  flutter pub --version
+  pub --version
 
   #start pub from the /app folder to have correct symlink paths
   pub get  
